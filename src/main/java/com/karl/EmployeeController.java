@@ -23,7 +23,13 @@ public class EmployeeController {
 
     @GetMapping(value = "getById")
     public Employee getById(@RequestParam(value = "id") Long id) {
+        if(id == 3L) {
+            throw new RuntimeException("asasas");
+        }
         return employeeMapper.getById(id);
+    }
+
+    public static void main(String[] args) {
     }
 
 }
